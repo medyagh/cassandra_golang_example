@@ -1,20 +1,23 @@
 package main
 
 import (
-	"testproj/ctrls"
-	"testproj/db"
+	"cassandra_golang_example/ctrls"
+	"cassandra_golang_example/db"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/zenazn/goji"
+	"time"
 )
 
 // Create a new instance of the logger. You can have any number of instances.
 var log = logrus.New()
 
 func main() {
-
+	// waiting for cassandra start up
+	time.Sleep(36*time.Second)
 	// Initializing db connection
-	err := db.Connect("127.0.0.1")
+	err := db.Connect("cassandra")
+
 	if err != nil {
 		panic(err)
 	}

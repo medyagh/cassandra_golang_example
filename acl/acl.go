@@ -2,7 +2,7 @@ package acl
 
 import (
 	"net/http"
-	"testproj/models"
+	"cassandra_golang_example/models"
 )
 
 // Permissions

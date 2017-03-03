@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
-	"testproj/acl"
-	"testproj/models"
+	"cassandra_golang_example/acl"
+	"cassandra_golang_example/models"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/gocql/gocql"

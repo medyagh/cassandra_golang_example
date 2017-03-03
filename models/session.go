@@ -1,8 +1,8 @@
 package models
 
 import (
-	"testproj/db"
-	"testproj/stmts"
+	"cassandra_golang_example/db"
+	"cassandra_golang_example/stmts"
 
 	"github.com/gocql/gocql"
 )

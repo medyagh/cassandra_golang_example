@@ -1,9 +1,10 @@
 package db
 
 import (
-	"testproj/stmts"
+	"cassandra_golang_example/stmts"
 
 	"github.com/gocql/gocql"
+	"time"
 )
 
 // Here we'll store connection
@@ -15,6 +16,7 @@ func Connect(machines ...string) error {
 	// Creating cluster for cassandra
 	cluster := gocql.NewCluster(machines...)
 	cluster.Consistency = gocql.Quorum
+	cluster.Timeout = 5 * time.Second
 
 	// Initializing session
 	session, err := cluster.CreateSession()
